@@ -1,0 +1,22 @@
+"apple": "I am a red fruit"
+1: "This is a roll number"
+
+---
+
+# Lists
+- apple 
+- mango 
+- banana 
+- Apple 
+---
+
+cities:
+  - Warsaw
+  - Cracow
+  - Wroclaw
+---
+cities: [Warsaw, Cracow]
+---
+{mango: "yellow fruit", age: 35}
+
+

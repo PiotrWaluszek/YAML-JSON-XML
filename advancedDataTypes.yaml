@@ -1,0 +1,119 @@
+student: !!seq
+  - marks
+  - name
+  - roll_no
+
+# Like this also
+cities: [warsaw, cracow]
+
+# Some of the keys of the seq will be empty
+# Sparse seq
+sparse seq:
+  - hey 
+  - how
+  - 
+  - Null
+  - sup
+
+# Nested sequence 
+-
+  - mango 
+  - apple 
+  - banana
+- 
+  - marks
+  - roll num
+  - date
+
+# Key: value pairs are called maps
+!!map
+
+# Nested mappings: map within an map
+name: Peter Waluszek 
+role: 
+  age: 19 
+  job: student
+
+# Same as
+name: Peter Waluszek
+role: {age: 19, job: student}
+
+
+
+# Pairs: keys may have duplicate values
+# !!pairs
+
+pair example: !!pairs
+  - job: student 
+  - job: teacher 
+
+# Same as
+pair example: !!pairs [job: student, job: teacher]
+# This will be an array of hashtables 
+
+
+
+# !1set will allow you to have unique values 
+names: !!set
+  ? Peter
+  ? Tom
+  ? Jerry
+
+
+
+# Dictionary !!omap
+People: !!omap
+  - Peter:
+      name: Peter Waluszek
+      age: 19
+      height: 181 
+  - Tom:
+      name: Tom Kowalski 
+      age: 20
+      height: 177
+  - Jerry:
+      name: Jerry Nowak
+      age: 32
+      height: 184
+
+
+
+
+# reusing some properties using anchors
+likings: 
+  fav fruit: mango
+  dislikies: grapes 
+
+person1: 
+  name: Peter Waluszek
+  fav fruit: mango
+  dislikes: grapes
+
+person2: 
+  name: Tom Kowalski
+  fav fruit: mango
+  dislikes: grapes
+
+person3: 
+  name: Jerry Nowak
+  fav fruit: mango
+  dislikes: grapes
+
+  likings: &likes
+  fav fruit: mango
+  dislikies: grapes 
+
+##################
+
+person1: 
+  name: Peter Waluszek
+    <<: *likes
+
+person2: 
+  name: Tom Kowalski
+  <<: *likes
+  dislikes: berries 
+
+person3: 
+  name: Jerry Nowak
+  <<: *likes

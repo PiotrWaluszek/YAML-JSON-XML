@@ -1,0 +1,48 @@
+# String Variables
+myself: Peter Waluszek
+fruit: "Apple"
+job: 'DevOps'
+
+bio: |
+My name is Piotr Waluszek.
+I am a AGH UST student.
+
+# Write a single line in multiple lines
+messageOne: >
+This will 
+all be 
+in one single line
+
+# Same as 
+messageTwo: !!str This will all be in one single line
+
+
+number: 5473
+marks: 98.76
+booleanValue: No # n, N, false, False, FALSE
+# Same for true -> y, Y, true, True, TRUE
+
+# Specify the type 
+zero: !!int 0
+positiveNUM: !!int 45
+negativeNum: !!int -45
+binaryNum: !!int 0b110001
+octalNum: !!int 06574
+hexalNumber: !!int 0x45
+commaValue: !!int +540_000 # 540,000
+exponential numbers: 6.023E56 
+
+# Floating point numbers
+marks: !!float 56.89
+infinite: !!float .inf
+not a num: .nan
+
+# Null
+surname: !!null Null #or null NULL ~
+~: This is a null key 
+
+# Dates and Time 
+date: !!timestamp 2002-12-14
+poland time: 2001-12-15T02:59:43.10 +1:00
+no time zone: 2001-12-15T02:59:43.10
+
